@@ -81,6 +81,10 @@ public class Pet {
         this.image = image;
     }
 
+    public boolean getFound() {
+        return found;
+    }
+
     public void setFound(boolean found) {
         this.found = found;
     }

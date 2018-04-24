@@ -1,5 +1,6 @@
 package com.example.demo;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -8,10 +9,12 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.validation.Valid;
+
 @Controller
 public class HomeController {
     @Autowired
-    PetRepository  petRepo;
+    PetRepository petRepo;
 
     @RequestMapping("/")
     public String showPet(Model model){
@@ -21,12 +24,13 @@ public class HomeController {
 
     @RequestMapping("/add")
     public String addPet(Model model){
+
         model.addAttribute("pet", new Pet());
         return "addpet";
     }
 
     @RequestMapping("/savepet")
-    public String savePet(@ModelAttribute("pet") Pet toSave, BindingResult result){
+    public String savePet(@Valid @ModelAttribute("pet") Pet toSave, BindingResult result){
         if(result.hasErrors()){
             return "addpet";
         }

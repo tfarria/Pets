@@ -4,23 +4,31 @@
     <meta charset="UTF-8"/>
     <title>Title</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous"/>
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/style.css"/>
 </head>
 <body>
 
-<form action="/savepet" th:object="${pet}" method="post">
+<form action="#" th:action="@{/savepet}" th:object="${pet}" method="post">
 
 
 
-    <input type="hidden" th:field="*{id}">
+    <input type="hidden" th:field="*{id}"/>
 
     Type of Animal: <input type="text" th:field="*{type}"/>
+    <span th:if="${#fields.hasErrors('type')}"
+          th:errors="*{type}"></span>
 
     Pet Name: <input type="text" th:field="*{name}"/>
+    <span th:if="${#fields.hasErrors('name')}"
+          th:errors="*{name}"></span>
 
     Description of Pet: <input type="text" th:field="*{description}"/>
+    <span th:if="${#fields.hasErrors('description')}"
+          th:errors="*{description}"></span>
 
     Pet Image: <input type="text" th:field="*{image}"/>
+    <span th:if="${#fields.hasErrors('image')}"
+          th:errors="*{image}"></span>
 
     <input type="submit" value="Submit"/><br/></div>
 
