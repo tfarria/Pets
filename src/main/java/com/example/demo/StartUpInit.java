@@ -22,7 +22,7 @@ public class StartUpInit {
         p.setName("Fluffy");
         p.setType("Dog");
         p.setDescription("Huge Dog");
-        p.setImage("/img/pup.png");
+        p.setImage("/img/elephant.jpg");
         petRepo.save(p);
         return "showpet";
     }

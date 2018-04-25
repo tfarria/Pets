@@ -7,51 +7,97 @@
     <link rel="stylesheet" href="/css/style.css"/>
 </head>
 <body>
+<div class="container">
+    <h1 class="text-center">Community Page for Pet Lovers</h1>
+        <img src="/img/elephant.jpg" alt="elephant">
+            <div class="row">
+                <form action="#" th:action="@{/savepet}" th:object="${pet}" method="post">
+                        <div class="col-2">
+                                <input type="hidden" th:field="*{id}"/>
+
+
+                                    Type of Animal: <input type="text" th:field="*{type}"/>
+                                    <span th:if="${#fields.hasErrors('type')}" th:errors="*{type}"></span>
+
+
+                                    Pet Name: <input type="text" th:field="*{name}"/>
+                                    <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span>
+
+                                    Description of Pet: <input type="text" th:field="*{description}"/>
+                                    <span th:if="${#fields.hasErrors('description')}" th:errors="*{description}"></span>
+
+                                    Pet Image: <input type="text" th:field="*{image}"/>
+                                    <span th:if="${#fields.hasErrors('image')}" th:errors="*{image}"></span>
+
+                                <input type="submit" value="Submit"/>
+                        </div>
+                </form>
+            </div>
+</div>
 
 
 
 
-<h1 class="text-center">Community Page for Pet Lovers</h1>
-
-<form action="#" th:action="@{/savepet}" th:object="${pet}" method="post">
 
 
 
-    <input type="hidden" th:field="*{id}"/>
-
-    <div class="container">
-
-        <div class="col-3">
-
-    Type of Animal: <input type="text" th:field="*{type}"/>
-    <span th:if="${#fields.hasErrors('type')}"
-          th:errors="*{type}"></span>
-        </div>
-
-        <div class="col-3">
-    Pet Name: <input type="text" th:field="*{name}"/>
-    <span th:if="${#fields.hasErrors('name')}"
-          th:errors="*{name}"></span>
-        </div>
-        <div class="col-3">
-    Description of Pet: <input type="text" th:field="*{description}"/>
-    <span th:if="${#fields.hasErrors('description')}"
-          th:errors="*{description}"></span>
-        </div>
-        <div class="col-3">
-    Pet Image: <input type="text" th:field="*{image}"/>
-    <span th:if="${#fields.hasErrors('image')}"
-          th:errors="*{image}"></span>
-        </div>
-    <input type="submit" value="Submit"/><br/></div>
 
 
 
-    </div>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
-</form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+
 </body>
 </html>

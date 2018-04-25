@@ -1,14 +1,10 @@
 img{
-height: 200px;
+    height: 300px;
+    width: 300px;
+    border-radius: 50%;
 }
-a{
-padding: 20px;
-    border-right: 20px;
-}
-p  {
-    color: firebrick;
-}
-h1{
-    text-shadow: 3px 2px firebrick;
 
+h1{
+font-style: italic;
+    color: firebrick;
 }

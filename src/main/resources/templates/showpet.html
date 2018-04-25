@@ -10,33 +10,32 @@
 
 
 <div class="row offset-11">
-<a href="/add">Add a Pet</a>
+    <a href="/add">Add a Pet</a>
 </div>
 
 
 <div th:each="eachPet:${petList}">
 
-
     <div class="row">
 
-            <p class="col-1" th:text="${eachPet.type}"></p>
-            <p class="col-1" th:text="${eachPet.name}"></p>
+            <p class="col-sm-1" th:text="${eachPet.type}"></p>
+            <p class="col-sm-1" th:text="${eachPet.name}"></p>
             <p class="col-sm-1" th:text="${eachPet.description}"></p>
             <p class="col-sm-1" th:text="${eachPet.found}?'Found': 'Lost'"></p>
 
     </div>
-    <img th:src="${eachPet.image}" th:alt="${eachPet.name}">
+        <img th:src="${eachPet.image}" height="500px;" th:alt="${eachPet.name}">
 
 
-    <div class="row">
-            <a class="col-sm-1" th:text="${eachPet.found}?'Report Lost': 'Report Found'" th:href="@{/changestatus/{id}(id=${eachPet.id})}"></a>
+                <div class="row">
+                        <a class="col-sm-1" th:text="${eachPet.found}?'Report Lost': 'Report Found'" th:href="@{/changestatus/{id}(id=${eachPet.id})}"></a>
 
 
-            <a class="col-sm-1" th:href="@{/update/{id}(id=${eachPet.id})}">Update</a>
+                        <a class="col-sm-1" th:href="@{/update/{id}(id=${eachPet.id})}">Update</a>
 
 
-            <a class="col-sm-1" th:href="@{/delete/{id}(id=${eachPet.id})}">Delete</a>
-    </div>
+                        <a class="col-sm-1" th:href="@{/delete/{id}(id=${eachPet.id})}">Delete</a>
+                </div>
 </div>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
